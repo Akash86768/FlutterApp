@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "870182405861",
+    "project_id": "dbms-e87dc",
+    "storage_bucket": "dbms-e87dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870182405861:android:5361df142e73c539d6b60c",
+        "android_client_info": {
+          "package_name": "com.example.favourite_places"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6zXzYH7Ymco2YUuFrZKj_k-Hi4P8sK7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

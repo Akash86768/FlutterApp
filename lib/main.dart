@@ -1,45 +1,20 @@
-import 'package:favourite_places/screen/places.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
-final colorScheme = ColorScheme.fromSeed(
-  brightness: Brightness.dark,
-  seedColor: const Color.fromARGB(255, 102, 6, 247),
-  background: const Color.fromARGB(255, 56, 49, 66),
-);
+import 'package:favourite_places/Demo.dart';
 
-final theme = ThemeData.dark().copyWith(
-  useMaterial3: true,
-  scaffoldBackgroundColor: colorScheme.background,
-  colorScheme: colorScheme,
-  textTheme: GoogleFonts.loraTextTheme().copyWith(
-    titleSmall: GoogleFonts.lora(
-      fontWeight: FontWeight.bold,
-    ),
-    titleMedium: GoogleFonts.lora(
-      fontWeight: FontWeight.bold,
-    ),
-    titleLarge: GoogleFonts.lora(
-      fontWeight: FontWeight.bold,
-    ),
-  ),
-);
-
-void main() {
-  runApp(ProviderScope(child: const MyApp()));
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(MyApp());
 }
 
-
-
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Great Places',
-      theme: theme,
-      home: Placescreen(),
+      debugShowCheckedModeBanner: false,
+      home: FirebaseDemo(),
     );
   }
 }
